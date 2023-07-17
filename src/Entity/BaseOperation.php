@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Enum\OperationType;
 use App\Repository\OperationRepository;
 use Doctrine\ORM\Mapping\ChangeTrackingPolicy;
 use Doctrine\ORM\Mapping\Column;
@@ -19,7 +20,7 @@ use Doctrine\ORM\Mapping\Table;
 #[ChangeTrackingPolicy(value: 'DEFERRED_EXPLICIT')]
 #[Table(name: 'operations')]
 #[InheritanceType(value: 'SINGLE_TABLE')]
-#[DiscriminatorColumn(name: 'type', type: 'string')]
+#[DiscriminatorColumn(name: 'type', enumType: OperationType::class)]
 #[DiscriminatorMap([
     'blockchain-in' =>  SystemFundsDepositOperation::class,
     'expense' =>  Expense::class,
