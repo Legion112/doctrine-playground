@@ -35,7 +35,9 @@ $em->clear();
 $operationRepository = new App\Repository\OperationRepository($em);
 //$operationRepository = new App\Repository\BlockchainRepository($em);
 //$operationRepository->findBy(['network' => Network::ETHEREUM]);
-$operations = $operationRepository->findAll();
+$builder = $operationRepository->createQueryBuilder('sysop');
+$builder->select('sysop');
+$operations = $builder->getQuery()->getResult();
 foreach ($operations as $operation) {
     var_dump($operation);
 }

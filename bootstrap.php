@@ -18,7 +18,7 @@ use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output;
 
 return (function () {
-    $output = new Output\ConsoleOutput();
+    $output = new Output\ConsoleOutput(Output\ConsoleOutput::VERBOSITY_DEBUG);
     $input = new Input\StringInput('');
 
 // Create a simple "default" Doctrine ORM configuration for Attributes
