@@ -1,0 +1,17 @@
+{
+    "require": {
+        "doctrine/orm": "^2.15",
+        "symfony/cache": "^6.3",
+        "symfony/console": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "test/"
+        }
+    }
+}
