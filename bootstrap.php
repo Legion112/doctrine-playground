@@ -45,7 +45,7 @@ return (function () {
     (new DropTable(
         new SingleManagerProvider($em),
     ))->run(new Input\StringInput('--force'), $output);
-    foreach (['--dump-sql', '--force'] as $cliInput) {
+    foreach (['--force'] as $cliInput) {
         (new CreateTableInMemory(
             new SingleManagerProvider($em),
         ))->run(new Input\StringInput($cliInput), $output);
